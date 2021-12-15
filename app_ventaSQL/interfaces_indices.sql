@@ -1,0 +1,18 @@
+--	BOTON INGRESAR
+SELECT dni,contrasena
+FROM Usuario
+WHERE dni = '20591822' AND contrasena = 'dsada5122';
+
+--CREACION DE INDICES
+CREATE INDEX IDX_APELLIDOS ON Usuario(apellido);
+EXPLAIN ANALYZE
+SELECT * FROM Usuario
+WHERE apellido = 'Smith';
+--DROP INDEX IDX_APELLIDOS;
+
+CREATE INDEX IDX_TIPO_TRANSAC ON Transaccion(id_tipoTransaccion);
+EXPLAIN ANALYZE
+SELECT * FROM Transaccion
+WHERE id_tipoTransaccion = 1;
+--DROP INDEX IDX_TIPO_TRANSAC
+

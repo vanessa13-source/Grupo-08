@@ -1,0 +1,11 @@
+nombre,precio_unidad,descripcion,marca,existencias,id_categoria
+Gaseosa,5.00,3 litros,Coca cola,20,6
+Leche,4.00,en tarro,Gloria,30,1
+Galleta,1.00,soda,Field,40,5
+Leche,4.00,en caja,Gloria,15,1
+Gaseosa,3.00,1 1/2  litro y medio,Pepsi,24,6
+Galleta,2.00,vainilla,San Jorge,30,5
+Gaseosa,5.00,3 litros,Fanta,12,6
+Chocolate,1.00,de tasa,Cuzco,40,5
+Botana,2.00,papitas,Lays,30,8
+Frugos,5.00,en caja,Frugos del Valle,24,7
