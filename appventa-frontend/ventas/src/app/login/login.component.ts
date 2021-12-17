@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {ApiService} from "../Api Service";
 import {Usuario} from "../model";
 
@@ -18,7 +19,8 @@ export class LoginComponent implements OnInit {
     contrasena : ""
   };
   contrasena: string = "";
-  constructor(private apiservice: ApiService) { }
+  mensaje: string = "";
+  constructor(private apiservice: ApiService, private route: Router) { }
 
   ngOnInit(): void {
     this.usuario = {
@@ -45,8 +47,15 @@ export class LoginComponent implements OnInit {
     });
   }
   autenticar(): void{
+    this.mensaje = "";
     this.apiservice.autenticar(this.usuario).subscribe((data) => {
-      console.log(data.nombre);
+      console.log(data);
+      if(data.dni != ""){
+        this.route.navigateByUrl("menu");
+      }
+      else{
+        this.mensaje = "Contraseña incorrecta";
+      }
     });
   }
 

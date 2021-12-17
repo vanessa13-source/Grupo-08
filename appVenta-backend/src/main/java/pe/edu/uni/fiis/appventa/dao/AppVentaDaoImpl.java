@@ -52,6 +52,7 @@ public class AppVentaDaoImpl implements AppVentaDao{
             ps.setString(5,usuario.getContrasena());
             ps.executeUpdate();
             ps.close();
+            con.commit();
             con.close();
         } catch (SQLException e){
             e.printStackTrace();
@@ -70,6 +71,7 @@ public class AppVentaDaoImpl implements AppVentaDao{
             ps.setLong(4,transaccion.getId_usuario());
             ps.executeUpdate();
             ps.close();
+            con.commit();
             con.close();
         } catch (SQLException e){
             e.printStackTrace();
@@ -88,6 +90,7 @@ public class AppVentaDaoImpl implements AppVentaDao{
             ps.setLong(4,transaccion.getId_usuario());
             ps.executeUpdate();
             ps.close();
+            con.commit();
             con.close();
         } catch (SQLException e){
             e.printStackTrace();
