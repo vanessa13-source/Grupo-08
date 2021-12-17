@@ -12,6 +12,14 @@ import java.sql.Date;
 /**
  *
  * @author Bryan
+ * id_transaccion serial,
+ * 	monto numeric(9,2),
+ * 	fecha timestamp,
+ * 	id_tipoTransaccion int,
+ * 	id_usuario int,
+ * 	primary key (id_transaccion),
+ * 	foreign key (id_usuario) references Usuario(id_usuario),
+ * 	foreign key (id_tipoTransaccion) references TipoTransaccion(id_tipoTransaccion)
  */
 @Data
 public class Transaccion {

@@ -27,7 +27,14 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   registrarUsuario(data: Usuario): Observable<Usuario> {
-    return this.http.post<Usuario>(this.baseurl + 'registrarUsuario', data, this.httpOptions)
+    return this.http.post<Usuario>(this.baseurl + 'registrar-usuario', data, this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandl)
+      );
+  }
+  autenticar(data: Usuario): Observable<Usuario> {
+    return this.http.post<Usuario>(this.baseurl + 'autenticar', data, this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.errorHandl)

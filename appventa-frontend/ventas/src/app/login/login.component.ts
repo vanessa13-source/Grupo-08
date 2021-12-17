@@ -44,5 +44,10 @@ export class LoginComponent implements OnInit {
       console.log(data);
     });
   }
+  autenticar(): void{
+    this.apiservice.autenticar(this.usuario).subscribe((data) => {
+      console.log(data.nombre);
+    });
+  }
 
 }
